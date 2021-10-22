@@ -79,4 +79,11 @@ compra.calcularIva();
 compra.calcularEnvio();
 compra.calcularTotal();
 
-alert("Gracias por su compra de: "+ producto +"\nSu total a pagar es de: $"+compra.total)
+/* Agrega item al carro */
+let contenedor = document.getElementById("itemsCarro");
+let divItem = document.createElement("div");
+divItem.classList. add("divCont__icono");
+divItem.classList. add("flexIcono");
+divItem.innerHTML =`<p>Producto: ${producto}</p><p>Cantidad: ${cantidadProducto}</p><p>Precio: $${precio}</p>`;
+contenedor.appendChild(divItem);
+

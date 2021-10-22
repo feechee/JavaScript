@@ -211,14 +211,15 @@ form{
 /* Seccion Medios de pago */
 
 .flexIcono{
-    margin:3rem;
+    margin: 3rem;
+    padding: 1rem;
     display: flex;
     flex-flow: row;
     align-items: center;
+    border: $coral 1px solid;
+    justify-content: space-between;
     p{
-        margin-left: 5rem;
-        padding-left: 1rem;
-        padding-right: 1rem ;
+       color: $celeste 
     }
 }
 

@@ -356,14 +356,15 @@ form legend {
 /* Seccion Medios de pago */
 .flexIcono {
   margin: 3rem;
+  padding: 1rem;
   display: flex;
   flex-flow: row;
   align-items: center;
+  border: #ecb1b1 1px solid;
+  justify-content: space-between;
 }
 
 .flexIcono p {
-  margin-left: 5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  color: #afcbdd;
 }
 /*# sourceMappingURL=style.css.map */
