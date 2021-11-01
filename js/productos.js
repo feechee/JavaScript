@@ -110,7 +110,6 @@ for(const objeto of listBtnComprar){
 
 function agregarProducto(e) {
  productos[e.target.id]
- console.log(e.target.id);
 }
 
 
