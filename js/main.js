@@ -63,7 +63,6 @@ function agregarAlCarro(){
         }
     }
     const item = productos.find(valor => valor.nombre === producto)
-    console.log(item.precio);
     precio = item.precio;
 
     while (!cantidadProducto || cantidadProducto==0) {
@@ -81,7 +80,7 @@ compra.calcularTotal();
 
 /* Agrega item al carro */
 let contenedor = document.getElementById("itemsCarro");
-let divItem = document.createElement("div");
+let divItem = document.createElement("div");    
 divItem.classList. add("divCont__icono");
 divItem.classList. add("flexIcono");
 divItem.innerHTML =`<p>Producto: ${producto}</p><p>Cantidad: ${cantidadProducto}</p><p>Precio: $${precio}</p>`;
