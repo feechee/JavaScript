@@ -1,20 +1,20 @@
 /* Array */
 
 const productos = [
-    {id:1, clase:"tutu", nombre:"princesa", precio:2000, foto:"url(../img/tutus/tutunena.png)" },
-    {id:2, clase:"tutu", nombre:"pepa", precio:2000, foto:"url(../img/tutus/tutuPepa.png)" },
-    {id:3, clase:"tutu", nombre:"unicornio", precio:2000, foto:"url(../img/tutus/tutuUnic.png)" },
-    {id:4, clase:"tutu", nombre:"bulldog", precio:2000, foto:"url(../img/tutus/tutuPerro.png)" },
-    {id:5, clase:"pijama", nombre:"harry", precio:2500, foto:"url(../img/pijamas/pijama1.png)" },
-    {id:6, clase:"pijama", nombre:"animalitos", precio:2500, foto:"url(../img/pijamas/pijama3.png)" },
-    {id:7, clase:"pijama", nombre:"roblox", precio:2500, foto:"url(../img/pijamas/pijama4.png)" },
-    {id:8, clase:"pijama", nombre:"among", precio:2500, foto:"url(../img/pijamas/pijama2.png)" },
-    {id:9, clase:"box", nombre:"arcoiris", precio:1000, foto:"url(../img/box/box1.png)" },
-    {id:10, clase:"box", nombre:"tateti", precio:1000, foto:"url(../img/box/box2.jpg)" },
-    {id:11, clase:"box", nombre:"nube", precio:1000, foto:"url(../img/box/box3.jpg)" },
-    {id:12, clase:"box", nombre:"creativo", precio:1000, foto:"url(../img/box/box4.png)" },
-    {id:13, clase:"taza", nombre:"dino", precio:500, foto:"url(../img/tazas/tazaDino.png)" },
-    {id:14, clase:"taza", nombre:"unicornio", precio:500, foto:"url(../img/tazas/tazaUnic.png)"},
+    {id:0, clase:"tutu", nombre:"princesa", precio:2000, foto:"url(../img/tutus/tutunena.png)" },
+    {id:1, clase:"tutu", nombre:"pepa", precio:2000, foto:"url(../img/tutus/tutuPepa.png)" },
+    {id:2, clase:"tutu", nombre:"unicornio", precio:2000, foto:"url(../img/tutus/tutuUnic.png)" },
+    {id:3, clase:"tutu", nombre:"bulldog", precio:2000, foto:"url(../img/tutus/tutuPerro.png)" },
+    {id:4, clase:"pijama", nombre:"harry", precio:2500, foto:"url(../img/pijamas/pijama1.png)" },
+    {id:5, clase:"pijama", nombre:"animalitos", precio:2500, foto:"url(../img/pijamas/pijama3.png)" },
+    {id:6, clase:"pijama", nombre:"roblox", precio:2500, foto:"url(../img/pijamas/pijama4.png)" },
+    {id:7, clase:"pijama", nombre:"among", precio:2500, foto:"url(../img/pijamas/pijama2.png)" },
+    {id:8, clase:"box", nombre:"arcoiris", precio:1000, foto:"url(../img/box/box1.png)" },
+    {id:9, clase:"box", nombre:"tateti", precio:1000, foto:"url(../img/box/box2.jpg)" },
+    {id:10, clase:"box", nombre:"nube", precio:1000, foto:"url(../img/box/box3.jpg)" },
+    {id:11, clase:"box", nombre:"creativo", precio:1000, foto:"url(../img/box/box4.png)" },
+    {id:12, clase:"taza", nombre:"dino", precio:500, foto:"url(../img/tazas/tazaDino.png)" },
+    {id:13, clase:"taza", nombre:"unicornio", precio:500, foto:"url(../img/tazas/tazaUnic.png)"},
 ];
 
 /* Funciones */
