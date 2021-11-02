@@ -32,9 +32,7 @@ productos.push(   new Producto(0,"tutu","princesa",2000,"url(../img/tutus/tutune
 
 function creadorDeTarjetas() {
   
-  let nombre=0;
-  let precio=0;
-  let foto=0;
+
   let sumaTarjetasTutu="";
   let sumaTarjetasPijama="";
   let sumaTarjetasBox="";
@@ -94,23 +92,6 @@ function creadorDeTarjetas() {
       break;
   };
   };
-
- /*  function agregarProducto () {
-      let btnTutu1= document.getElementById("0")
-      btnTutu1.addEventListener('click',()=>{
-      let contenedor = document.getElementById("itemsCarro");
-      console.log(contenedor);
-      let divItem = document.createElement("div");    
-      divItem.classList. add("divCont__icono");
-      divItem.classList. add("flexIcono");
-      console.log(productos[0].nombre);
-      divItem.innerHTML =`<p>Producto: ${productos[0].nombre}</p><p>Precio: $${productos[0].precio}</p>`;
-      console.log(divItem);
-      contenedor.appendChild(divItem);
-      alert("Se agrego un elemento al Carrito")
-      })
-    } */
-  
   let contenedorTutu = document.getElementById("contenedorTutus");
   contenedorTutu.innerHTML =  sumaTarjetasTutu;
  
@@ -123,28 +104,8 @@ function creadorDeTarjetas() {
   let contenedorTaza = document.getElementById("contenedorTaza");
   contenedorTaza.innerHTML =  sumaTarjetasTaza;
 }
+  creadorDeTarjetas()
 
-let listBtnComprar = document.getElementsByClassName("btnComprar");
-console.log(listBtnComprar);
-for(const objeto of listBtnComprar){
-  objeto.addEventListener('click', agregarProducto)
-}
 
-creadorDeTarjetas()
-
-let btnTutu1= document.getElementById("0")
-console.log(btnTutu1);
-btnTutu1.addEventListener('click',()=>{
- let contenedor = document.getElementById("itemsCarro");
-  console.log(contenedor);
-  let divItem = document.createElement("div");    
-  divItem.classList. add("divCont__icono");
-  divItem.classList. add("flexIcono");
-  console.log(productos[0].nombre);
-  divItem.innerHTML =`<p>Producto: ${productos[0].nombre}</p><p>Precio: $${productos[0].precio}</p>`;
-  console.log(divItem);
-  contenedor.appendChild(divItem);
-  alert("Se agrego un elemento al Carrito")
-})
 
 
