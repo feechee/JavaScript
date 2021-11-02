@@ -1,21 +1,32 @@
 /* Array */
 
-const productos = [
-    {id:0, clase:"tutu", nombre:"princesa", precio:2000, foto:"url(../img/tutus/tutunena.png)" },
-    {id:1, clase:"tutu", nombre:"pepa", precio:2000, foto:"url(../img/tutus/tutuPepa.png)" },
-    {id:2, clase:"tutu", nombre:"unicornio", precio:2000, foto:"url(../img/tutus/tutuUnic.png)" },
-    {id:3, clase:"tutu", nombre:"bulldog", precio:2000, foto:"url(../img/tutus/tutuPerro.png)" },
-    {id:4, clase:"pijama", nombre:"harry", precio:2500, foto:"url(../img/pijamas/pijama1.png)" },
-    {id:5, clase:"pijama", nombre:"animalitos", precio:2500, foto:"url(../img/pijamas/pijama3.png)" },
-    {id:6, clase:"pijama", nombre:"roblox", precio:2500, foto:"url(../img/pijamas/pijama4.png)" },
-    {id:7, clase:"pijama", nombre:"among", precio:2500, foto:"url(../img/pijamas/pijama2.png)" },
-    {id:8, clase:"box", nombre:"arcoiris", precio:1000, foto:"url(../img/box/box1.png)" },
-    {id:9, clase:"box", nombre:"tateti", precio:1000, foto:"url(../img/box/box2.jpg)" },
-    {id:10, clase:"box", nombre:"nube", precio:1000, foto:"url(../img/box/box3.jpg)" },
-    {id:11, clase:"box", nombre:"creativo", precio:1000, foto:"url(../img/box/box4.png)" },
-    {id:12, clase:"taza", nombre:"dino", precio:500, foto:"url(../img/tazas/tazaDino.png)" },
-    {id:13, clase:"taza", nombre:"unicornio", precio:500, foto:"url(../img/tazas/tazaUnic.png)"},
-];
+const productos = [];
+
+/* Objetos */
+class Producto{
+  constructor(id, clase, nombre, precio, foto){
+    this.id=id,
+    this.clase=clase;
+    this.nombre=nombre;
+    this.precio=precio;
+    this.foto=foto;
+  }
+}
+
+productos.push(   new Producto(0,"tutu","princesa",2000,"url(../img/tutus/tutunena.png)"),
+                  new Producto(1,"tutu","pepa",2000,"url(../img/tutus/tutuPepa.png)"),
+                  new Producto(2,"tutu","unicornio",2000,"url(../img/tutus/tutuUnic.png)"),
+                  new Producto(3,"tutu","bulldog",2000,"url(../img/tutus/tutuPerro.png)"),
+                  new Producto(4,"pijama","harry",2500,"url(../img/pijamas/pijama1.png)"),
+                  new Producto(5,"pijama","animalitos",2500,"url(../img/pijamas/pijama3.png)"),
+                  new Producto(6,"pijama","roblox",2500,"url(../img/pijamas/pijama4.png)"),
+                  new Producto(7,"pijama","among",2500,"url(../img/pijamas/pijama2.png)"),
+                  new Producto(8,"box","arcoiris",1000,"url(../img/box/box1.png)"),
+                  new Producto(9,"box","tateti",1000,"url(../img/box/box2.jpg)"),
+                  new Producto(10,"box","nube",1000,"url(../img/box/box3.jpg)"),
+                  new Producto(11,"box","creativo",1000,"url(../img/box/box4.png)"),
+                  new Producto(12,"taza","dino",500,"url(../img/tazas/tazaDino.png)"),
+                  new Producto(13,"taza","unicornio",500,"url(../img/tazas/tazaUnic.png)"))
 
 /* Funciones */
 
@@ -58,14 +69,14 @@ function creadorDeTarjetas() {
   </div>
   <!-- Boton de compra -->
   <div class="dropdown mt-3">
-    <a class="btn btnComprar" id=${[i]}">
+    <a class="btn btnComprar" id="${[i]}">
       Comprar
     </a>
   </div>
   </div>
   </div>`;
   
-  switch (productos[i].clase) {
+  switch (this.clase) {
     case "tutu":
       sumaTarjetasTutu = sumaTarjetasTutu + tarjeta;
   
@@ -83,8 +94,22 @@ function creadorDeTarjetas() {
       break;
   };
   };
-  
-  
+
+ /*  function agregarProducto () {
+      let btnTutu1= document.getElementById("0")
+      btnTutu1.addEventListener('click',()=>{
+      let contenedor = document.getElementById("itemsCarro");
+      console.log(contenedor);
+      let divItem = document.createElement("div");    
+      divItem.classList. add("divCont__icono");
+      divItem.classList. add("flexIcono");
+      console.log(productos[0].nombre);
+      divItem.innerHTML =`<p>Producto: ${productos[0].nombre}</p><p>Precio: $${productos[0].precio}</p>`;
+      console.log(divItem);
+      contenedor.appendChild(divItem);
+      alert("Se agrego un elemento al Carrito")
+      })
+    } */
   
   let contenedorTutu = document.getElementById("contenedorTutus");
   contenedorTutu.innerHTML =  sumaTarjetasTutu;
@@ -97,24 +122,29 @@ function creadorDeTarjetas() {
   
   let contenedorTaza = document.getElementById("contenedorTaza");
   contenedorTaza.innerHTML =  sumaTarjetasTaza;
-  
-
 }
 
-
 let listBtnComprar = document.getElementsByClassName("btnComprar");
-
+console.log(listBtnComprar);
 for(const objeto of listBtnComprar){
   objeto.addEventListener('click', agregarProducto)
 }
 
-function agregarProducto(e) {
- productos[e.target.id]
-}
-
-
-
-/* Ejecucion */
-
 creadorDeTarjetas()
+
+let btnTutu1= document.getElementById("0")
+console.log(btnTutu1);
+btnTutu1.addEventListener('click',()=>{
+ let contenedor = document.getElementById("itemsCarro");
+  console.log(contenedor);
+  let divItem = document.createElement("div");    
+  divItem.classList. add("divCont__icono");
+  divItem.classList. add("flexIcono");
+  console.log(productos[0].nombre);
+  divItem.innerHTML =`<p>Producto: ${productos[0].nombre}</p><p>Precio: $${productos[0].precio}</p>`;
+  console.log(divItem);
+  contenedor.appendChild(divItem);
+  alert("Se agrego un elemento al Carrito")
+})
+
 
