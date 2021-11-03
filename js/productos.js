@@ -134,7 +134,8 @@ function selectorDeCompras(params) {
 }
 
 function acumuladorDeCompras() {
-  if (localStorage !== 0) {
+  
+  if (localStorage.length!== 0) {
     const productosEnStorage = JSON.parse(localStorage.getItem("productos"));
     for (let i = 0; i < productosEnStorage.length; i++) {
       productosCarrito.push(productosEnStorage[i]);
