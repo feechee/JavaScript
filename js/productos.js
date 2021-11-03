@@ -1,6 +1,7 @@
 /* Array */
 
 const productos = [];
+const productosCarrito = [];
 
 /* Objetos */
 class Producto{
@@ -67,7 +68,8 @@ function creadorDeTarjetas() {
   </div>
   <!-- Boton de compra -->
   <div class="dropdown mt-3">
-    <a class="btn btnComprar" id="${[i]}">
+    <a class="btn btnComprar" data-bs-dismiss="offcanvas"
+    aria-label="Close" id="${[i]}">
       Comprar
     </a>
   </div>
@@ -104,8 +106,51 @@ function creadorDeTarjetas() {
   let contenedorTaza = document.getElementById("contenedorTaza");
   contenedorTaza.innerHTML =  sumaTarjetasTaza;
 }
-  creadorDeTarjetas()
 
+    function agregarProducto(e){
+      const boton = e.target
+      productosCarrito.push (productos[boton.id])
+      if (productosCarrito !== 0) {
+        localStorage.setItem('productos',JSON.stringify(productosCarrito));
+      }
+      let contenedor = document.getElementById("alert");
+      let divItem = document.createElement("div");
+      divItem.innerHTML =`<div class="alert alert-success d-flex justify-content-between" role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+      <div>
+        Se agrego el producto: ${productos[boton.id].clase} - ${productos[boton.id].nombre} al carrito de compra.
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`
+      contenedor.appendChild(divItem); 
+    }
+
+    function selectorDeCompras(params) {
+      const listBtnComprar = document.getElementsByClassName('btnComprar')
+      
+        for (const btn of listBtnComprar) {
+          btn.addEventListener('click', agregarProducto)
+        }
+    }
+
+  
+    function acumuladorDeCompras() {
+      if (localStorage !== 0) {
+        const productosEnStorage = JSON.parse(localStorage.getItem('productos'));
+        for (let i = 0; i < productosEnStorage.length; i++) {
+          productosCarrito.push(productosEnStorage[i])
+          
+        }
+      }
+    }
+
+
+    /* Ejecucion */
+    
+    creadorDeTarjetas()
+    selectorDeCompras()
+    acumuladorDeCompras()
+    
+  
 
 
 
