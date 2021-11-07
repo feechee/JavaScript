@@ -1,3 +1,5 @@
+$(document).ready(function () {
+  
 /* Array */
 
 const productos = [];
@@ -112,20 +114,17 @@ function agregarProducto(e) {
   if (productosCarrito !== 0) {
     localStorage.setItem("productos", JSON.stringify(productosCarrito));
   }
-  let contenedor = document.getElementById("alert");
-  let divItem = document.createElement("div");
-  divItem.innerHTML = `<div class="alert alert-success d-flex justify-content-between" role="alert">
-      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-      <div>
-        Se agrego el producto: ${productos[boton.id].clase} - ${
-    productos[boton.id].nombre
-  } al carrito de compra.
-      </div>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
-  contenedor.appendChild(divItem);
+  $("#alert").prepend(`<div class="alert alert-success d-flex justify-content-between" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+  <div>
+    Se agrego el producto: ${productos[boton.id].clase} - ${
+productos[boton.id].nombre
+} al carrito de compra.
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`);
 }
 
-function selectorDeCompras(params) {
+function selectorDeCompras() {
   const listBtnComprar = document.getElementsByClassName("btnComprar");
 
   for (const btn of listBtnComprar) {
@@ -148,3 +147,14 @@ function acumuladorDeCompras() {
 creadorDeTarjetas();
 selectorDeCompras();
 acumuladorDeCompras();
+
+
+
+
+
+
+
+
+});
+
+
