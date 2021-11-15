@@ -1,3 +1,6 @@
+$(document).ready(function () {
+  
+/* FUNCIONES */
 function impresorDeCompras(params) {
   if (localStorage.length > 0) {
      productosEnStorage = JSON.parse(localStorage.getItem('productos'));
@@ -12,11 +15,22 @@ function impresorDeCompras(params) {
   }
 }
 function vaciarCarrito() {
-  vaciar = document.getElementById("btnVaciar").addEventListener("click", () => localStorage.clear())
+  /* vaciar = document.getElementById("btnVaciar").addEventListener("click", () => localStorage.clear()) */
+  $("#btnVaciar").click(function (e) { 
+    e.preventDefault();
+    localStorage.clear()
+    $("#itemsCarro").fadeOut(2000);
+  });
 }
-
+/* EJECUCION */
 impresorDeCompras()
 vaciarCarrito()
+
+
+
+});
+
+
   
 
 
