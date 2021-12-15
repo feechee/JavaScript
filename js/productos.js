@@ -2,35 +2,21 @@ $(document).ready(function () {
   
 /* Array */
 
-const productos = [];
+const productos = JSON.parse(localStorage.getItem('tarjetas'))
 const productosCarrito = [];
 
 /* Objetos */
 class Producto {
-  constructor(id, clase, nombre, precio, foto) {
-    (this.id = id), (this.clase = clase);
+  constructor(id, clase, nombre, precio, cantidad, foto) {
+    this.id = id; 
+    this.clase = clase;
     this.nombre = nombre;
     this.precio = precio;
     this.foto = foto;
+    this.cantidad = cantidad
   }
 }
 
-productos.push(
-  new Producto(0, "tutu", "princesa", 2000, "url(../img/tutus/tutunena.png)"),
-  new Producto(1, "tutu", "pepa", 2000, "url(../img/tutus/tutuPepa.png)"),
-  new Producto(2, "tutu", "unicornio", 2000, "url(../img/tutus/tutuUnic.png)"),
-  new Producto(3, "tutu", "bulldog", 2000, "url(../img/tutus/tutuPerro.png)"),
-  new Producto(4, "pijama", "harry", 2500, "url(../img/Pijamas/pijama1.png)"),
-  new Producto(5,"pijama","animalitos",2500,"url(../img/Pijamas/pijama3.png)"),
-  new Producto(6, "pijama", "roblox", 2500, "url(../img/Pijamas/pijama4.png)"),
-  new Producto(7, "pijama", "among", 2500, "url(../img/Pijamas/pijama2.png)"),
-  new Producto(8, "box", "arcoiris", 1000, "url(../img/box/box1.png)"),
-  new Producto(9, "box", "tateti", 1000, "url(../img/box/box2.jpg)"),
-  new Producto(10, "box", "nube", 1000, "url(../img/box/box3.jpg)"),
-  new Producto(11, "box", "creativo", 1000, "url(../img/box/box4.png)"),
-  new Producto(12, "taza", "dino", 500, "url(../img/tazas/tazaDino.png)"),
-  new Producto(13, "taza", "unicornio", 500, "url(../img/tazas/tazaUnic.png)")
-);
 
 /* Funciones */
 
@@ -114,7 +100,7 @@ function agregarProducto(e) {
   if (productosCarrito !== 0) {
     localStorage.setItem("productos", JSON.stringify(productosCarrito));
   }
-  $("#alert").prepend(`<div class="alert alert-success d-flex justify-content-between" role="alert">
+  $("#alert").append(`<div class="alert alert-success d-flex justify-content-between fixed-top" role="alert">
   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
   <div>
     Se agrego el producto: ${productos[boton.id].clase} - ${

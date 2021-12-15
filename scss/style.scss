@@ -85,8 +85,8 @@ h4{
 
 .gridContainer{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-auto-rows: minmax(500px, auto);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: minmax(400px, auto);
     gap: 2rem;
     padding: 2rem;
     &__item{
@@ -208,10 +208,10 @@ form{
     border: $coral 5px solid;
 }
 
-/* Seccion Medios de pago */
+/* Seccion Carrito */
 
 .flexIcono{
-    margin: 3rem;
+    margin: 1rem;
     padding: 1rem;
     display: flex;
     flex-flow: row;
@@ -220,6 +220,33 @@ form{
     justify-content: space-between;
     p{
        color: $celeste 
+    }
+}
+
+.cantidadCarrito{
+    width: 2.5rem;
+    border: none;
+    text-align: center;
+    color: $celeste;
+}
+
+.totalBox{
+    margin: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: $celeste 4px solid ;
+    border-bottom:$celeste 4px solid ;
+    p{
+        color: $coral;
+        font-size: larger;
+    }
+
+    .fotoCarrito{
+        width: 5rem;
+        height: 5rem;
     }
 }
 

@@ -91,12 +91,35 @@
           Carrito de compra
         </h2>
       </div>
+      <div class="totalBox">
+        <p>Producto</p>
+        <p >Cantidad</p>
+        <p >Precio</p>
+      </div>
       <!-- CONTENEDORES -->
       <div id="itemsCarro">
       </div>
     </section>
-    <div class="container-fluid">
-      <button type="button" id="btnVaciar" class="btn btn-outline-secondary m-3 row justify-content-end">Vaciar Carrito</button>
+    <div class="totalBox" id="totalCarrito">
+      <p>Total</p>
+      <p id="total"></p>
+    </div>
+    <div class=" hstack gap-2 d-flex flex-row-reverse ">
+      <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="btnComprar" class="btn btn-outline-secondary m-3">Comprar</button>
+      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasBottomLabel">
+          </h5>
+          <p id="mensaje">
+          </p>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body small">
+          ...
+        </div>
+      </div>
+      <button type="button" id="btnVaciar" class="btn btn-outline-secondary m-3  ">Vaciar Carrito</button>
+      
     </div>
   </main>
   <!-- FOOTER -->
