@@ -22,10 +22,13 @@
   <script src="https://kit.fontawesome.com/75d81c8d13.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../img/favicon.ico">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <title>Mundo Maruja | Contacto</title>
 </head>
 
 <body>
+  <div id="alert">
+  </div>
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-sm navbar-light">
     <div class="container-fluid">
@@ -131,7 +134,7 @@
         <!-- FORMULARIO -->
         <div class="gridContainer">
           <div class="gridContainer__item contacto">
-            <form action="#">
+            <form action="#" id="formu">
               <fieldset class="formulario">
                 <legend>
                   Formulario de Contacto
@@ -139,17 +142,20 @@
                 <label for="nombre" class="formulario__label">
                   Nombre:
                 </label>
-                <input id="nombre" type="text" class="formulario__input">
+                <input id="nombre" type="text" class="formulario__input" name="nombre">
+                <p class="formulario__input-error" id="error_nombre">El nombre solo puede contener letras entre 1 y 40 caracteres. </p>
 
                 <label for="apellido" class="formulario__label">
                   Apellido:
                 </label>
-                <input id="apellido" type="text" class="formulario__input">
+                <input id="apellido" type="text" class="formulario__input" name="apellido">
+                <p class="formulario__input-error" id="error_apellido">El nombre solo puede contener letras entre 1 y 40 caracteres. </p>
 
                 <label for="e-mail" class="formulario__label">
                   Email:
                 </label>
-                <input id="e-mail" type="email" class="formulario__input">
+                <input id="email" type="email" class="formulario__input" name="email">
+                <p class="formulario__input-error" id="error_email">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
 
                 <label for="comentario" class="formulario__label">
                   Escriba su consulta:
@@ -160,9 +166,9 @@
                 <p class="formulario__label">
                   Suscribite a nuestro newsletter
                 </p>
-                <input type="checkbox" class="formulario__check">
+                <input type="checkbox" class="formulario__check" name="check">
 
-                <input type="submit" class="formulario__boton">
+                <input type="submit" class="formulario__boton" name="submit">
               </fieldset>
             </form>
           </div>
@@ -223,4 +229,5 @@
       </p>
     </div>
   </footer>
+  <script src="../js/formulario.js"></script>
 </body>
