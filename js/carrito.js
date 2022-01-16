@@ -83,14 +83,26 @@ $(document).ready(function () {
   }
 //dispara el mensaje desde el boton Comprar
   function comprar() {
-    error = "Debe agregar un producto al carrito desde la seccion Productos.";
-    mensaje = "Gracias por su compra!!, nos contactaremos a la brevedad";
+    error = `<div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center fixed-top" role="alert">
+    El carrito esta vacio, debe seleccionar algun producto de la seccion "Productos".
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>`;
+    mensaje = `<div class="alert alert-success alert-dismissible fade show d-flex justify-content-center fixed-top" role="alert">
+    Gracias por su compra!! Nos contactaremos a la brevedad
+    <button type="button" class="btn-close" id="alertaCarrito" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>`;
     $("#btnComprar").click(function (e) {
       e.preventDefault();
       if (productosCarrito.length == 0) {
         $("#mensaje").append(error);
       } else {
         $("#mensaje").append(mensaje);
+        $("#alertaCarrito").click(function (e) { 
+          e.preventDefault();
+          localStorage.clear();
+           $("#itemsCarro").fadeOut(1000);
+            location.reload();
+        });
       }
     });
   }

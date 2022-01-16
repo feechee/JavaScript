@@ -129,8 +129,8 @@ $(document).ready(function () {
   }
 
   /* Ejecucion */
-
   creadorDeTarjetas();
   selectorDeCompras();
   acumuladorDeCompras();
 });
+

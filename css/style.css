@@ -449,4 +449,8 @@ form legend {
   width: 5rem;
   height: 5rem;
 }
+
+.totalBox .mensaje1 {
+  color: red;
+}
 /*# sourceMappingURL=style.css.map */

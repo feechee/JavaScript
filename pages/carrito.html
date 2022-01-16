@@ -24,6 +24,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div id="mensaje">
+
+  </div>
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-sm navbar-light">
     <div class="container-fluid">
@@ -106,18 +109,6 @@
     </div>
     <div class=" hstack gap-2 d-flex flex-row-reverse ">
       <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="btnComprar" class="btn btn-outline-secondary m-3">Comprar</button>
-      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasBottomLabel">
-          </h5>
-          <p id="mensaje">
-          </p>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body small">
-          ...
-        </div>
-      </div>
       <button type="button" id="btnVaciar" class="btn btn-outline-secondary m-3  ">Vaciar Carrito</button>
       
     </div>
@@ -176,4 +167,5 @@
     </div>
   </footer>
   <script src="../js/carrito.js"></script>
+  <script src="../js/lectorDeJson.js"></script>
 </body>
